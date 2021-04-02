@@ -1,24 +1,60 @@
-# README
+# 社内ツール クローンプロジェクト
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+技術力向上を目的に社内システムのクローンを開発する<br>
+今回は自身の権限で閲覧できる範囲を再現
 
-Things you may want to cover:
+# 開発環境
 
-* Ruby version
+- Ruby 2.6.5
+- Rails 5.2.5
+- 8.0.19
 
-* System dependencies
+# 使用技術
 
-* Configuration
+- Ruby
+- Rails
+- MYSQL
+- JavaScript
+- jQuery
+- Bootstrap
+- Docker
+- Git
+- GitHub
+- Heroku
 
-* Database creation
+# 想定ユーザー
 
-* Database initialization
+自社従業員
 
-* How to run the test suite
+# ユーザーの要望
 
-* Services (job queues, cache servers, search engines, etc.)
+時間をかけずに自社の手続きを済ませたい。<br>
+情報を分かりやすい形で確認したい。<br>
+個人情報を取り扱うため安全に使用したい。
 
-* Deployment instructions
+# 要件
 
-* ...
+一連の操作を非同期で行う。<br>
+個人情報を扱う際は、表示・非表示を選択できる。
+
+# 機能一覧（予定）
+
+- ログイン機能
+- パスワード変更機能
+- 案件・会社・個人情報表示・非表示選択機能
+- 情報修正依頼機能（依頼まで）
+- 経費申請機能
+- 自社勤怠CRUD機能
+- 現場勤怠CRUD機能
+- 給与計算機能
+- 給与明細表示機能
+- PDFアップロード機能
+- PDF閲覧機能
+
+# テーブル定義
+
+<https://docs.google.com/spreadsheets/d/131ORvu4fAsJNmCek8xkEUKuEPMksNjUtvjT_xFJ7te8/edit?usp=sharing>
+
+# E-R図
+
+<https://docs.google.com/spreadsheets/d/1U055RrcQb_gIK9iqjySnv_r7W_o2rJNOUlBsxEF_i0Q/edit?usp=sharing>
