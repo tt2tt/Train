@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'expenserequest', to: 'expenses#index'
   get 'attendance', to: 'attendances#index'
   get 'payslip', to: 'pays#index'
+  get 'document', to: 'documents#index'
 
   resources :expenses, except: :index
   resources :attendances, except: :index
