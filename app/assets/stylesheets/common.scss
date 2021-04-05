@@ -1,23 +1,74 @@
 @import "bootstrap";
 
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+}
+.container-fluid{
+  height: 100%;
+}
+.row{
+  height: 100%;
+}
 #header_left{
-  height: 45px;
+  height: 6%;
   border-right: 1px solid #c0c0c0;
   border-bottom: 1px solid #c0c0c0;
 }
 #header_right{
+  height: 6%;
   width: 100%;
   border-bottom: 1px solid #c0c0c0;
 }
 .fa-running{
   float: left;
-  font-size: 40px;
   color: #000080;
+  font-size: 40px;
   margin-top: 2px;
 }
 #app_name{
   float: left;
-  font-size: 30px;
   color: #000080;
+  font-size: 30px;
   margin-left: 6px;
+}
+#sidebar{
+  background-color: #f8f9fa;
+}
+#sidebar #first{
+  margin-top: 14px;
+}
+#sidebar a{
+  display: block;
+  color: #000;
+  text-decoration: none;
+  border: 1px solid #c0c0c0;
+  padding: 8px 16px;
+  margin-bottom: 4px;
+  transition: background 0.5s;
+}
+#sidebar a:hover{
+  color: #FFF;
+  background-color: #007BFF;
+}
+#sidebar a:active{
+  color: #007bff;
+  background-color: none;
+}
+#sidebar i{
+  font-size: 19px;
+}
+#sidebar h5{
+  display: inline;
+  font-size: 17px;
+  margin-left: 4px;
+}
+#sidebar .current{
+  color: #007bff;
+  background-color: none;
+}
+#main{
+  height: 94%;
 }
