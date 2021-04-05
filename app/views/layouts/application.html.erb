@@ -7,9 +7,21 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container-fluid">
+      <div class="row">
+        <div id="header_left" class="col-md-2">
+          <i class="fas fa-running"></i>
+          <p id="app_name">SDASH</p>
+        </div>
+        <div id="header_right" class="col-md-10">
+
+        </div>
+      </div>
+      <%= yield %>
+    </div>
   </body>
 </html>

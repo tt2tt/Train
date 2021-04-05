@@ -1,0 +1,23 @@
+@import "bootstrap";
+
+#header_left{
+  height: 45px;
+  border-right: 1px solid #c0c0c0;
+  border-bottom: 1px solid #c0c0c0;
+}
+#header_right{
+  width: 100%;
+  border-bottom: 1px solid #c0c0c0;
+}
+.fa-running{
+  float: left;
+  font-size: 40px;
+  color: #000080;
+  margin-top: 2px;
+}
+#app_name{
+  float: left;
+  font-size: 30px;
+  color: #000080;
+  margin-left: 6px;
+}
