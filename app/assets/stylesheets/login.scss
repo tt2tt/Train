@@ -1,0 +1,41 @@
+#login_body{
+  background-color: #061A46;
+}
+#login{
+  height: 430px;
+  width: 430px;
+  background-color: #FFF;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 180px!important;
+}
+#login .field{
+margin: 25px 0;
+}
+#welcome{
+  color: #000080;
+  font-size: 30px;
+  font-size: 80px;
+  padding-top: 30px;
+  margin-left: 6px;
+}
+#email{
+  margin-left: 50px;
+}
+#password{
+  margin-left: 20px;
+}
+#login input {
+  height: 40px;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+}
+#login .actions input{
+  height: 36px;
+  width: 220px;
+  margin-top: 20px;
+  background-color: #061A46;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 0.25rem;
+}

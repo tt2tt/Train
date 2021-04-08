@@ -15,11 +15,18 @@
       <div class="row">
         <div id="header_left" class="col-md-2">
           <a href="home">
-            <i class="fas fa-running"></i>
+            <i class="fas fa-running" id="app_running"></i>
             <p id="app_name">SDASH</p>
           </a>
         </div>
         <div id="header_right" class="col-md-10">
+          <div id="user">
+            <i class="fas fa-user fa-lg mx-2"></i>
+            <% if current_user %>
+              <%= current_user.name %>
+            <% end %>
+          </div>
+          <p id="logout"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></p>
         </div>
         <div id="sidebar" class="col-md-2">
           <a id="first" href="home"><i class="fas fa-file-alt fa-lg"></i><h5>情報</h5></a>

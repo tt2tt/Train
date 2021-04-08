@@ -1,5 +1,4 @@
 @import "bootstrap";
-
 html {
   height: 100%;
 }
@@ -22,7 +21,7 @@ body {
   width: 100%;
   border-bottom: 1px solid #c0c0c0;
 }
-.fa-running{
+#app_running{
   float: left;
   color: #000080;
   font-size: 40px;
@@ -68,6 +67,14 @@ body {
 #sidebar .current{
   color: #007bff;
   background-color: none;
+}
+#user{
+  margin-top: 10px;
+  text-align: center;
+}
+#logout{
+  float:  right;
+  margin-top: -30px;
 }
 #main{
   height: 94%;
