@@ -7,8 +7,8 @@ Rails.application.routes.draw do
     get 'login' => 'devise/sessions#new', as: :new_user_session
     post 'login' => 'devise/sessions#create', as: :user_session
     delete 'logout' => 'devise/sessions#destroy', as: :destroy_user_session
-    get 'changepassword' => 'devise/passwords#edit', as: :edit_user_password
-    post 'changepassword' => 'devise/passwords#update', as: :user_password
+    get 'changepassword' => 'devise/registrations#edit', as: :users_edit
+    put 'changepassword' => 'devise/registrations#update', as: :user_registration
   end
 
   get 'home', to: 'homes#home'
