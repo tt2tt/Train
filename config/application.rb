@@ -8,6 +8,10 @@ Bundler.require(*Rails.groups)
 
 module Myapp
   class Application < Rails::Application
+    config.to_prepare do
+      Devise::SessionsController.layout "before_layouts"
+      Devise::RegistrationsController.layout "change_layouts"
+    end
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
 

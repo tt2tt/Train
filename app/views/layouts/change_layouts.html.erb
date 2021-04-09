@@ -26,18 +26,9 @@
               <%= current_user.name %>
             <% end %>
           </div>
-          <p id="logout"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'btn btn-danger' %></p>
+          <p id="logout"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'btn btn-danger disabled '%></p>
         </div>
-        <div id="sidebar" class="col-md-2">
-          <a id="first" href="home"><i class="fas fa-file-alt fa-lg"></i><h5>情報</h5></a>
-          <a href="expenserequest" class="side_nav"><i class="fas fa-clipboard-check fa-l"></i><h5>経費申請</h5></a>
-          <a href="attendance"><i class="fas fa-user-clock fa-lg"></i><h5>勤怠表</h5></a>
-          <a href="payslip"><i class="fas fa-yen-sign fa-lg"></i><h5>給与明細</h5></a>
-          <a href="document"><i class="fas fa-file-alt fa-lg"></i><h5>社内資料</h5></a>
-        </div>
-        <div id="main" class="col-md-10">
-          <%= yield %>
-        </div>
+        <%= yield %>
       </div>
     </div>
   </body>
