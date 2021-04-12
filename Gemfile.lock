@@ -90,6 +90,8 @@ GEM
     dotenv-rails (2.7.6)
       dotenv (= 2.7.6)
       railties (>= 3.2)
+    enumerize (2.4.0)
+      activesupport (>= 3.2)
     erubi (1.10.0)
     execjs (2.7.0)
     faker (2.17.0)
@@ -162,6 +164,7 @@ GEM
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+    rb-readline (0.5.5)
     regexp_parser (2.1.1)
     responders (3.0.1)
       actionpack (>= 5.0)
@@ -236,6 +239,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   dotenv-rails
+  enumerize
   faker
   jbuilder (~> 2.5)
   jquery-rails
@@ -243,6 +247,7 @@ DEPENDENCIES
   mysql2 (>= 0.4.4, < 0.6.0)
   puma (~> 3.11)
   rails (~> 5.2.5)
+  rb-readline
   sass-rails (~> 5.0)
   selenium-webdriver
   spring

@@ -1,3 +1,65 @@
-// Place all the styles related to the homes controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#home h2{
+  border-bottom: 1px solid #ced4da;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+#buttons{
+  border-bottom: 1px solid #ced4da;
+  height: 46px;
+}
+#home .btn-success{
+  float: right;
+}
+#home a{
+  color: #FFF;
+}
+#home a:hover{
+  border: 0px;
+  text-decoration: none;
+}
+#home #information{
+  height: 500px;
+  overflow: auto;
+}
+#home .mosaic{
+  -ms-filter: blur(20px);
+	filter: blur(20px);
+}
+#home .none{
+  display: none;
+}
+#home .block{
+  border: 1px solid #ced4da;
+  border-radius: 10px;
+  margin-top: 40px;
+  position: relative;
+}
+#home .title{
+  font-size: 14px;
+  font-weight: bold;
+  background-color: #d6d6d6;
+  top: -20px;
+  padding: 10px;
+  border-radius: 5px;
+  position: absolute;
+}
+#home .block span{
+  margin-left: 20px;
+}
+#home .block p{
+  position: relative;
+}
+#home .block .category{
+  font-weight: bold;
+  margin-left: 40px;
+}
+#home .block .content{
+  position: absolute;
+    left: 300px;
+}
+#home .block .first{
+  margin-top: 50px;
+}
+#home .block .last{
+  margin-bottom: 40px;
+}

@@ -10,7 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_05_073351) do
+ActiveRecord::Schema.define(version: 2021_04_11_223507) do
+
+  create_table "matters", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "contractor", null: false
+    t.string "name", null: false
+    t.integer "price", null: false
+    t.integer "width_up", null: false
+    t.integer "width_under", null: false
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_matters_on_user_id"
+  end
+
+  create_table "organizations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "afiliation", null: false
+    t.integer "basic_salary", null: false
+    t.integer "allowances", null: false
+    t.integer "insurance_number", null: false
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_organizations_on_user_id"
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -21,8 +44,17 @@ ActiveRecord::Schema.define(version: 2021_04_05_073351) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name", null: false
+    t.bigint "phone_number"
+    t.string "address"
+    t.bigint "emergency_contact"
+    t.string "relationship"
+    t.bigint "mynumber"
+    t.string "account"
+    t.bigint "pension_number"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "matters", "users"
+  add_foreign_key "organizations", "users"
 end
