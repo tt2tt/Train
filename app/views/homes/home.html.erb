@@ -1,2 +1,98 @@
-<h1>情報ページ</h1>
-<%= link_to "パスワードの変更", users_edit_path %>
+<div id="home">
+  <h2>情報ページ</h2>
+  <div id="buttons">
+    <button type="button" class="btn btn-primary" id="display">
+      情報を表示
+    </button>
+    <button type="button" class="btn btn-primary none" id="hide">
+      情報を非表示
+    </button>
+    <button type="button" class="btn btn-success" id="hide">
+      <i class="fas fa-lock"></i>
+      <%= link_to "パスワードの変更", users_edit_path %>
+    </button>
+  </div>
+
+  <div id="information" class="mosaic">
+    <div class="block">
+      <span class="title">案件情報</span>
+      <p class="first">
+        <span class="category">契約先:</span>
+        <span class="content">  <%= @matter.contractor %></span>
+      </p>
+      <p>
+        <span class="category">案件名:</span>
+        <span class="content">  <%= @matter.name %></span>
+      </p>
+      <p>
+        <span class="category">単金:</span>
+        <span class="content">  <%= @matter.price %></span>
+      </p>
+      <p class="last">
+        <span class="category">精算幅:</span>
+        <span class="content"><%= @matter.width_under %>~<%= @matter.width_up %></span>
+      </p>
+    </div>
+
+    <div class="block">
+      <span class="title">会社情報</span>
+      <p class="first">
+        <span class="category">メールアドレス</span>
+        <span class="content">  <%= current_user.email %></span>
+      </p>
+      <p>
+        <span class="category">在籍:</span>
+        <span class="content">  <%= @organization.afiliation %></span>
+      </p>
+      <p>
+        <span class="category">基本給(みなし残業代含む):</span>
+        <span class="content">  <%= @organization.basic_salary %></span>
+      </p>
+      <p>
+        <span class="category">諸手当:</span>
+        <span class="content">  <%= @organization.allowances %></span>
+      </p>
+      <p class="last">
+        <span class="category">雇用保険番号:</span>
+        <span class="content"><%= @organization.insurance_number %></span>
+      </p>
+    </div>
+
+    <div class="block">
+      <span class="title">個人情報</span>
+      <p class="first">
+        <span class="category">名前</span>
+        <span class="content">  <%= current_user.name %></span>
+      </p>
+      <p>
+        <span class="category">電話番号:</span>
+        <span class="content">  <%= current_user.phone_number %></span>
+      </p>
+      <p>
+        <span class="category">現住所:</span>
+        <span class="content">  <%= current_user.address %></span>
+      </p>
+      <p>
+        <span class="category">緊急連絡先:</span>
+        <span class="content">  <%= current_user.emergency_contact %></span>
+      </p>
+      <p>
+        <span class="category"></span>
+        <span class="content">  (続柄: <%= current_user.relationship %>)</span>
+      </p>
+      <p>
+        <span class="category">マイナンバー:</span>
+        <span class="content">  <%= current_user.mynumber %></span>
+      </p>
+      <p>
+        <span class="category">銀行口座:</span>
+        <span class="content">  <%= current_user.account %></span>
+      </p>
+      <p class="last">
+        <span class="category">年金番号:</span>
+        <span class="content"><%= current_user.pension_number %></span>
+      </p>
+    </div>
+  </div>
+
+</div>
