@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   get 'payslip', to: 'pays#index'
   get 'information', to: 'pays#information'
   get 'document', to: 'documents#index'
+  # get 'new', to: 'documents#new'
+  # post 'create', to: 'documents#create'
 
   resources :expenses, except: :index
   resources :attendances, except: :index
