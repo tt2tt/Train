@@ -7,7 +7,7 @@
     <button type="button" class="btn btn-primary none" id="hide">
       情報を非表示
     </button>
-    <button type="button" class="btn btn-success" id="hide">
+    <button type="button" class="btn btn-success">
       <i class="fas fa-lock"></i>
       <%= link_to "パスワードの変更", users_edit_path %>
     </button>
@@ -82,7 +82,7 @@
       </p>
       <p>
         <span class="category">マイナンバー:</span>
-        <span class="content">  <%= current_user.mynumber %></span>
+        <span class="content">  <%= current_user.mynumber.to_s.scan(/.{1,4}/).join('-') %></span>
       </p>
       <p>
         <span class="category">銀行口座:</span>
@@ -90,7 +90,7 @@
       </p>
       <p class="last">
         <span class="category">年金番号:</span>
-        <span class="content"><%= current_user.pension_number %></span>
+        <span class="content"><%= current_user.pension_number.to_s[0,4] %>-<%= current_user.pension_number.to_s[5,11] %></span>
       </p>
     </div>
   </div>

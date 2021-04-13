@@ -1,3 +1,30 @@
-// Place all the styles related to the documents controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#document table{
+  width: 100%;
+}
+#document th{
+  border: 1px solid #dee2e6;
+  width: 50%;
+  height: 50px;
+  padding: 10px;
+  background-color: #eeeeee47;
+}
+#document #title{
+  width: 70%;
+}
+#document #content{
+  width: 30%;
+}
+#document td{
+  height: 60px;
+  border: 1px solid #dee2e6;
+  padding: 10px;
+}
+#document .btn-primary{
+  // width: 80px;
+}
+#document .link{
+  text-align: center;
+}
+#document i{
+  // color: #FFF;
+}

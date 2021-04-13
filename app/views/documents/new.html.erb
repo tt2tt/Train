@@ -1,0 +1,15 @@
+<%= form_with(model: @ducument, local: true, url: create_path) do |f| %>
+  <div class="name">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="image">
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+  </div>
+  <%= f.submit %>
+<% end %>
+
+<object data="/uploads/document/image/1/%E6%A1%88%E4%BB%B6%E3%81%BE%E3%81%A8%E3%82%81%E8%A1%A8__%E3%82%A4%E3%83%B3%E3%83%95%E3%83%A9_.pdf" type="application/pdf" width="" height="">リンク</object>
+
+<%= link_to "リンク", @test.image.url, class: "btn btn-primary" %>
