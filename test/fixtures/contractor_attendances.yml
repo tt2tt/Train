@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  year: 2021-04-12 02:07:20
+  month: 2021-04-12 02:07:20
+  start_time: 2021-04-12 02:07:20
+  end: 2021-04-12 02:07:20
+  total: 1
+  basic_time: 2021-04-12 02:07:20
+
+two:
+  year: 2021-04-12 02:07:20
+  month: 2021-04-12 02:07:20
+  start_time: 2021-04-12 02:07:20
+  end: 2021-04-12 02:07:20
+  total: 1
+  basic_time: 2021-04-12 02:07:20

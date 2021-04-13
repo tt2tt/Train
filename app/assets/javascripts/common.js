@@ -37,4 +37,27 @@ $(document).bind('turbolinks:load ajax:complete', function() {
          $("#home #information").addClass("mosaic");
        });
      });
+
+     // pay
+     $('#month_select').change(function() {
+       var year = $("#month_select").val().split('/')[0];
+       var month = $("#month_select").val().split('/')[1];
+       console.log(month);
+       $.ajax({
+       type: "GET",
+       url: "/information",
+       data:{
+       year: year,
+       month: month
+     },
+       dataType: 'json'
+     }).done(function(result) {
+       $('#info_area').html(result.html);
+     }).fail(function (jqXHR, textStatus, errorThrown) {
+       console.log("ajax通信に失敗しました");
+       console.log("jqXHR          : " + jqXHR.status);
+       console.log("textStatus     : " + textStatus);
+       console.log("errorThrown    : " + errorThrown.message);
+     });
+     });
 });

@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  year: 1
+  month: 1
+  basic: 1
+  exception_allowance: 1
+  position_allowance: 1
+  overtime_allowance: 1
+  expenses: 1
+  total_fee: 1
+
+two:
+  year: 1
+  month: 1
+  basic: 1
+  exception_allowance: 1
+  position_allowance: 1
+  overtime_allowance: 1
+  expenses: 1
+  total_fee: 1

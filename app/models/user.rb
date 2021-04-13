@@ -6,4 +6,7 @@ class User < ApplicationRecord
 
   has_one :matter
   has_one :organization
+  has_many :contractor_attendances
+  has_many :pays
+  has_many :deductions
 end
