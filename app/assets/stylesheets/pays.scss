@@ -1,3 +1,43 @@
-// Place all the styles related to the pays controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#pay select{
+  width: 100%;
+  height: 40px;
+  border: 1px solid #dee2e6;
+}
+#pay h2{
+  border-bottom: 1px solid #ced4da;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+#pay #payslip{
+  border: 1px solid #dee2e6;
+}
+#pay #top table{
+  width: 100%;
+}
+#pay #top th{
+  padding: 8px;
+  border: 1px solid #dee2e6;
+  border-bottom: 2px solid #dee2e6;
+}
+#pay #top td{
+  width: 25%;
+  padding: 8px;
+  border: 1px solid #dee2e6;
+  border-bottom: 2px solid #dee2e6;
+}
+#pay #information th{
+  border: 1px solid #dee2e6;
+  padding-left: 5px;
+}
+#pay #information td{
+  padding: 10px;
+}
+#pay #information .each{
+  background-color: #6cb2eb !important;
+}
+#pay #information #left{
+  margin-top: -140px;
+}
+#pay #information #middle{
+  margin-top: -92px;
+}

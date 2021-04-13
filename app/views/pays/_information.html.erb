@@ -1,0 +1,273 @@
+<% if current_attendance == nil %>
+<div id="payslip">
+  <div id="top">
+    <table>
+      <thead>
+        <tr>
+          <th colspan="6">SDASH株式会社</th>
+          <th colspan="6">給与明細</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="3">氏名</td>
+          <td colspan="3"><%= current_user.name %></td>
+          <td colspan="3">差引支給額</td>
+          <td colspan="3">0円</td>
+        </tr>
+
+        <tr id="information">
+          <td colspan="4">
+            <table id="left">
+              <thead>
+                <tr>
+                  <th colspan="2" class="each">勤怠</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>出勤日数</td>
+                  <td>0日</td>
+                </tr>
+                <tr>
+                  <td>出勤時間</td>
+                  <td>0:00</td>
+                </tr>
+                <tr>
+                  <td>残業時間</td>
+                  <td>0:00</td>
+                </tr>
+                <tr>
+                  <td>深夜時間</td>
+                  <td>0:00</td>
+                </tr>
+                <tr>
+                  <td>有給使用日数</td>
+                  <td>0日</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td colspan="4">
+            <table id="middle">
+              <thead>
+                <tr>
+                  <th colspan="2" class="each">支給</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>基本給</td>
+                  <td>0円</td>
+                </tr>
+                <tr>
+                  <td>深夜休日手当</td>
+                  <td>0円</td>
+                </tr>
+                <tr>
+                  <td>役職手当</td>
+                  <td>0日</td>
+                </tr>
+                <tr>
+                  <td>時間外手当</td>
+                  <td>0円</td>
+                </tr>
+                <tr>
+                  <td>経費生産額</td>
+                  <td>0円</td>
+                </tr>
+                <tr>
+                  <td>支給合計</td>
+                  <td>0円</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td colspan="4">
+            <table>
+              <thead>
+                <tr>
+                  <th colspan="2" class="each">控除</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>健康保険</td>
+                  <td>0円</td>
+                </tr>
+                <tr>
+                  <td>介護保険</td>
+                  <td>0円</td>
+                </tr>
+                <tr>
+                  <td>厚生年金</td>
+                  <td>0円</td>
+                </tr>
+                <tr>
+                  <td>雇用保険</td>
+                  <td>0円</td>
+                </tr>
+                <tr>
+                  <td>所得税</td>
+                  <td>0円</td>
+                </tr>
+                <tr>
+                  <td>住民税</td>
+                  <td>0円</td>
+                </tr>
+                <tr>
+                  <td>その他</td>
+                  <td>0円</td>
+                </tr>
+                <tr>
+                  <td>控除合計</td>
+                  <td>0円</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<% else %>
+<div id="payslip">
+  <div id="top">
+    <table>
+      <thead>
+        <tr>
+          <th colspan="6">SDASH株式会社</th>
+          <th colspan="6">給与明細</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="3">氏名</td>
+          <td colspan="3"><%= current_user.name %></td>
+          <td colspan="3">差引支給額</td>
+          <td colspan="3"><%= current_pay.total_fee - current_deduction.total_fee %>円</td>
+        </tr>
+
+        <tr id="information">
+          <td colspan="4">
+            <table id="left">
+              <thead>
+                <tr>
+                  <th colspan="2" class="each">勤怠</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>出勤日数</td>
+                  <td><%= @current_attendance.total_time / @current_attendance.basic_time %>日</td>
+                </tr>
+                <tr>
+                  <td>出勤時間</td>
+                  <td><%= @current_attendance.total_time %>:00</td>
+                </tr>
+                <tr>
+                  <td>残業時間</td>
+                  <td>0:00</td>
+                </tr>
+                <tr>
+                  <td>深夜時間</td>
+                  <td>0:00</td>
+                </tr>
+                <tr>
+                  <td>有給使用日数</td>
+                  <td>0日</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td colspan="4">
+            <table id="middle">
+              <thead>
+                <tr>
+                  <th colspan="2" class="each">支給</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>基本給</td>
+                  <td><%= current_pay.basic %>円</td>
+                </tr>
+                <tr>
+                  <td>深夜休日手当</td>
+                  <td><%= current_pay.exception_allowance %>円</td>
+                </tr>
+                <tr>
+                  <td>役職手当</td>
+                  <td><%= current_pay.position_allowance %>円</td>
+                </tr>
+                <tr>
+                  <td>時間外手当</td>
+                  <td><%=current_pay.overtime_allowance %>円</td>
+                </tr>
+                <tr>
+                  <td>経費生産額</td>
+                  <td><%= current_pay.expenses %>円</td>
+                </tr>
+                <tr>
+                  <td>支給合計</td>
+                  <td><%= current_pay.total_fee %>円</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td colspan="4">
+            <table>
+              <thead>
+                <tr>
+                  <th colspan="2" class="each">控除</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>健康保険</td>
+                  <td><%= current_deduction.health_insurance %>円</td>
+                </tr>
+                <tr>
+                  <td>介護保険</td>
+                  <td><%= current_deduction.care_insurance %>円</td>
+                </tr>
+                <tr>
+                  <td>厚生年金</td>
+                  <td><%= current_deduction.pension %>円</td>
+                </tr>
+                <tr>
+                  <td>雇用保険</td>
+                  <td><%= current_deduction.employment_insurance %>円</td>
+                </tr>
+                <tr>
+                  <td>所得税</td>
+                  <td><%= current_deduction.income_tax %>円</td>
+                </tr>
+                <tr>
+                  <td>住民税</td>
+                  <td><%= current_deduction.residents_tax %>円</td>
+                </tr>
+                <tr>
+                  <td>その他</td>
+                  <td><%= current_deduction.other %>円</td>
+                </tr>
+                <tr>
+                  <td>控除合計</td>
+                  <td><%= current_deduction.total_fee %>円</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<% end %>

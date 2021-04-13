@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  year: 1
+  month: 1
+  health_insurance: 1
+  care_insurance: 1
+  pension: 1
+  employment_insurance: 1
+  income_tax: 1
+  residents_tax: 1
+  other: 1
+  total_fee: 1
+
+two:
+  year: 1
+  month: 1
+  health_insurance: 1
+  care_insurance: 1
+  pension: 1
+  employment_insurance: 1
+  income_tax: 1
+  residents_tax: 1
+  other: 1
+  total_fee: 1
