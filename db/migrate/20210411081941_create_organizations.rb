@@ -6,7 +6,7 @@ class CreateOrganizations < ActiveRecord::Migration[5.2]
       t.integer :allowances, null: false
       t.integer :insurance_number, null: false
 
-        t.references :user, foreign_key: true
+        t.references :user, foreign_key: true, null: false
 
       t.timestamps
     end

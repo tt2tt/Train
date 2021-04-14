@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_13_043710) do
+ActiveRecord::Schema.define(version: 2021_04_13_083231) do
 
   create_table "contractor_attendances", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "year", null: false
     t.integer "month", null: false
     t.integer "total_time", null: false
     t.integer "basic_time", null: false
-    t.bigint "user_id"
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_contractor_attendances_on_user_id"
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2021_04_13_043710) do
     t.integer "residents_tax", null: false
     t.integer "other", null: false
     t.integer "total_fee", null: false
-    t.bigint "user_id"
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_deductions_on_user_id"
@@ -47,13 +47,22 @@ ActiveRecord::Schema.define(version: 2021_04_13_043710) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "fix_requests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "target", null: false
+    t.text "content", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_fix_requests_on_user_id"
+  end
+
   create_table "matters", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "contractor", null: false
     t.string "name", null: false
     t.integer "price", null: false
     t.integer "width_up", null: false
     t.integer "width_under", null: false
-    t.bigint "user_id"
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_matters_on_user_id"
@@ -64,7 +73,7 @@ ActiveRecord::Schema.define(version: 2021_04_13_043710) do
     t.integer "basic_salary", null: false
     t.integer "allowances", null: false
     t.integer "insurance_number", null: false
-    t.bigint "user_id"
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_organizations_on_user_id"
@@ -79,7 +88,7 @@ ActiveRecord::Schema.define(version: 2021_04_13_043710) do
     t.integer "overtime_allowance", null: false
     t.integer "expenses", null: false
     t.integer "total_fee", null: false
-    t.bigint "user_id"
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_pays_on_user_id"
@@ -107,6 +116,7 @@ ActiveRecord::Schema.define(version: 2021_04_13_043710) do
 
   add_foreign_key "contractor_attendances", "users"
   add_foreign_key "deductions", "users"
+  add_foreign_key "fix_requests", "users"
   add_foreign_key "matters", "users"
   add_foreign_key "organizations", "users"
   add_foreign_key "pays", "users"

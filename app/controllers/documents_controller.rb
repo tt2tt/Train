@@ -5,7 +5,6 @@ class DocumentsController < ApplicationController
 
   # def new
   #   @document = Document.new
-  #   @test = Document.find(1)
   # end
   #
   # def create

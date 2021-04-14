@@ -9,4 +9,5 @@ class User < ApplicationRecord
   has_many :contractor_attendances
   has_many :pays
   has_many :deductions
+  has_many :fix_requests
 end

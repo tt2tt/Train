@@ -7,7 +7,7 @@ class CreateMatters < ActiveRecord::Migration[5.2]
       t.integer :width_up, null: false
       t.integer :width_under, null: false
 
-      t.references :user, foreign_key: true
+      t.references :user, foreign_key: true, null: false
 
       t.timestamps
     end

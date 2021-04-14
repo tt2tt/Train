@@ -1,4 +1,5 @@
 <div id="home">
+  <%= flash[:notice] %>
   <h2>情報ページ</h2>
   <div id="buttons">
     <button type="button" class="btn btn-primary" id="display">
@@ -6,6 +7,9 @@
     </button>
     <button type="button" class="btn btn-primary none" id="hide">
       情報を非表示
+    </button>
+    <button type="button" class="btn btn-primary js-modal-open">
+      修正を申請する
     </button>
     <button type="button" class="btn btn-success">
       <i class="fas fa-lock"></i>
@@ -94,5 +98,30 @@
       </p>
     </div>
   </div>
+</div>
 
+
+<div class="modal js-modal">
+  <div class="modal__bg js-modal-close"></div>
+    <div class="modal__content">
+      <div id="form_title">
+        <h5>情報修正依頼</h5>
+      </div>
+      <%= form_with(model: @fix_request, remote: true, url: create_path) do |f| %>
+        <div class="target">
+          <%= f.label :target, "修正対象" %><br>
+          <%= f.select :target ,FixRequest.targets.options, include_blank: "選択して下さい"  %>
+        </div>
+
+        <div class="content">
+          <%= f.label :content, "修正内容" %><br>
+          <%=f.text_area :content %>
+        </div>
+
+        <div id="form_buttons">
+          <span class="js-modal-close btn btn-secondary">閉じる</span>
+          <%= f.submit "修正依頼", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+  </div>
 </div>
