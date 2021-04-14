@@ -6,7 +6,7 @@ class CreateContractorAttendances < ActiveRecord::Migration[5.2]
       t.integer :total_time, null: false
       t.integer :basic_time, null: false
 
-      t.references :user, foreign_key: true
+      t.references :user, foreign_key: true, null: false
       t.timestamps
     end
   end

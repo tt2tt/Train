@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   end
 
   get 'home', to: 'homes#home'
+  post 'create', to: 'homes#create'
   get 'expenserequest', to: 'expenses#index'
   get 'attendance', to: 'attendances#index'
   get 'payslip', to: 'pays#index'
