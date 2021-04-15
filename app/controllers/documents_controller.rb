@@ -1,6 +1,11 @@
 class DocumentsController < ApplicationController
   def index
     @documents = Document.all
+
+    if params[:j]
+      partial = render_to_string(partial: 'documents/document', locals: { } )
+      render json: { html: partial }
+    end
   end
 
   # def new

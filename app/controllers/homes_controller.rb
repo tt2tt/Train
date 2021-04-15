@@ -1,15 +1,27 @@
 class HomesController < ApplicationController
-  def home
+  skip_before_action :verify_authenticity_token
+
+  def index
     @matter = current_user.matter
     @organization = current_user.organization
     @fix_request = FixRequest.new
+
+    if params[:j]
+      partial = render_to_string(partial: 'homes/home', locals: { matter: @matter, organization: @organization, fix_request: @fix_request })
+      render json: { html: partial }
+    end
   end
 
   def create
-    @fix_request = current_user.fix_requests.build(fix_request_params)
+    @fix_request = current_user.fix_requests.build(target: params[:target], content: params[:content])
     @fix_request.save
-    flash[:notice] = "依頼が完了しました。"
-    redirect_to home_path
+
+    @matter = current_user.matter
+    @organization = current_user.organization
+    @fix_request = FixRequest.new
+    
+    partial = render_to_string(partial: 'homes/home', locals: { matter: @matter, organization: @organization, fix_request: @fix_request })
+    render json: { html: partial }
   end
 
   private

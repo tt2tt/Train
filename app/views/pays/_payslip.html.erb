@@ -1,0 +1,22 @@
+<div id="pay">
+  <h2>給与明細</h2>
+  <select name="months" id="month_select">
+    <option value="2021/4">2021/04</option>
+    <option value="2021/3">2021/03</option>
+    <option value="2021/2">2021/02</option>
+    <option value="2021/1">2021/01</option>
+    <option value="2020/12">2020/12</option>
+    <option value="2020/11">2020/11</option>
+    <option value="2020/10">2020/10</option>
+    <option value="2020/9">2020/09</option>
+    <option value="2020/8">2020/08</option>
+    <option value="2020/7">2020/07</option>
+    <option value="2020/6">2020/06</option>
+    <option value="2020/5">2020/05</option>
+</select>
+
+  <div id="info_area">
+    <%= render 'pays/information', current_attendance: @current_attendance, current_pay: @current_pay, current_deduction: @current_deduction %>
+  </div>
+
+</div>

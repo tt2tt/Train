@@ -1,0 +1,24 @@
+<div id="document">
+  <h2>社内資料</h2>
+  <table>
+    <thead>
+      <tr>
+        <th id="title">ファイル名</th>
+        <th id="content">表示</th>
+      </tr>
+    </thead>
+    <% @documents.each do |document| %>
+    <tr>
+      <td>
+        <%= document.name %>
+      </td>
+      <td class="link">
+        <%= link_to "PDF表示", document.image.url, target: :_blank, rel: "noopener noreferrer", class: "btn btn-primary" %>
+      </td>
+    </tr>
+    <% end %>
+    <tbody>
+
+    </tbody>
+  </table>
+</div>

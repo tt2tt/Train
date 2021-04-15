@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  root to: 'homes#home'
+  devise_scope :user do
+   root :to => "devise/sessions#new"
+  end
 
   # devise_for :users
   devise_for :users, skip: :all
@@ -11,7 +13,7 @@ Rails.application.routes.draw do
     put 'changepassword' => 'devise/registrations#update', as: :user_registration
   end
 
-  get 'home', to: 'homes#home'
+  get 'home', to: 'homes#index'
   post 'create', to: 'homes#create'
   get 'expenserequest', to: 'expenses#index'
   get 'attendance', to: 'attendances#index'

@@ -1,5 +1,4 @@
 <div id="home">
-  <%= flash[:notice] %>
   <h2>情報ページ</h2>
   <div id="buttons">
     <button type="button" class="btn btn-primary" id="display">
@@ -22,19 +21,19 @@
       <span class="title">案件情報</span>
       <p class="first">
         <span class="category">契約先:</span>
-        <span class="content">  <%= @matter.contractor %></span>
+        <span class="content">  <%= matter.contractor %></span>
       </p>
       <p>
         <span class="category">案件名:</span>
-        <span class="content">  <%= @matter.name %></span>
+        <span class="content">  <%= matter.name %></span>
       </p>
       <p>
         <span class="category">単金:</span>
-        <span class="content">  <%= @matter.price %></span>
+        <span class="content">  <%= matter.price %></span>
       </p>
       <p class="last">
         <span class="category">精算幅:</span>
-        <span class="content"><%= @matter.width_under %>~<%= @matter.width_up %></span>
+        <span class="content"><%= matter.width_under %>~<%= matter.width_up %></span>
       </p>
     </div>
 
@@ -46,19 +45,19 @@
       </p>
       <p>
         <span class="category">在籍:</span>
-        <span class="content">  <%= @organization.afiliation %></span>
+        <span class="content">  <%= organization.afiliation %></span>
       </p>
       <p>
         <span class="category">基本給(みなし残業代含む):</span>
-        <span class="content">  <%= @organization.basic_salary %></span>
+        <span class="content">  <%= organization.basic_salary %></span>
       </p>
       <p>
         <span class="category">諸手当:</span>
-        <span class="content">  <%= @organization.allowances %></span>
+        <span class="content">  <%= organization.allowances %></span>
       </p>
       <p class="last">
         <span class="category">雇用保険番号:</span>
-        <span class="content"><%= @organization.insurance_number %></span>
+        <span class="content"><%= organization.insurance_number %></span>
       </p>
     </div>
 
@@ -107,7 +106,7 @@
       <div id="form_title">
         <h5>情報修正依頼</h5>
       </div>
-      <%= form_with(model: @fix_request, remote: true, url: create_path) do |f| %>
+      <%= form_with(model: fix_request, remote: true, url: create_path) do |f| %>
         <div class="target">
           <%= f.label :target, "修正対象" %><br>
           <%= f.select :target ,FixRequest.targets.options, include_blank: "選択して下さい"  %>
@@ -120,7 +119,8 @@
 
         <div id="form_buttons">
           <span class="js-modal-close btn btn-secondary">閉じる</span>
-          <%= f.submit "修正依頼", class: "btn btn-primary" %>
+          <button type="button" class="btn btn-primary" id="fix_button">修正依頼</button>
+
         </div>
       <% end %>
   </div>
